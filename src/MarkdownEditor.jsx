@@ -5,6 +5,7 @@ class MarkdownEditor extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.props = props;
         this.md = new MarkdownIt();
         this.state = { 
             value: "Hello, __world__!"
@@ -37,6 +38,7 @@ class MarkdownEditor extends React.Component {
                 className="content"
                 dangerouslySetInnerHTML={this.getRawMarkup()}
             />
+            <div style="font-weight: bold"><sub>Please note that this was made using React JSX.</sub></div>
         </div>
       );
     }

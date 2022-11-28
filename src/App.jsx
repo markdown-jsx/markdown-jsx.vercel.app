@@ -14,8 +14,7 @@ class App extends React.Component {
         window.opener = null;
         window.open("https://github.com/yoyomonem/jsx-md-edit/issues/new?assignees=yoyomonem&labels=bug&template=bug_report.md&title=%5BREACT+BUG%5D+The+React+app+itself");
     }
-    componentDidCatchError() {
-        // You can also log the error to an error reporting service
+    componentDidCatch(error, errorInfo) {
         sendErrorStatistics();
     }
     render() {
