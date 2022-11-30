@@ -1,14 +1,15 @@
+"use strict";
 import React from "react";
 import MarkdownEditor from "./MarkdownEditor";
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
-        this.props.type = String;
+        this.props.attribs.type = String;
     }
     static getDerivedStateFromError(error) {
-        // Update state so the next render will show the fallback UI.
-        return { hasError: true };
+        this.state.hasError = true;
+        return this.state.hasError;
     }
     sendErrorStatistics() {
         window.opener = null;
@@ -18,12 +19,25 @@ class App extends React.Component {
         sendErrorStatistics();
     }
     render() {
+        if (this.state.hasError) {
+                return (
+                    <div>
+                        <h2>Something went wrong.</h2>
+                        <div id="actualResult">
+                            <h1>Actual result:</h1>
+                            <h2>Markdown Editor (React JSX)</h2>
+                            <MarkdownEditor />
+                            <p>Type: {this.props.attribs.type}</p>
+                        </div>
+                    </div>
+                );
+        }
         return (
-            <React.StrictMode>
+            <div>
                 <h1>Markdown Editor (React JSX)</h1>
                 <MarkdownEditor />
-                <p>Type: {this.props.type}</p>
-            </React.StrictMode>
+                <p>Type: {this.props.attr.type}</p>
+            </div>
         );
     }
 }
