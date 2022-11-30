@@ -4,8 +4,8 @@ import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <ErrorBoundary>
+        <React.ErrorBoundary>
             <App type="Markdown" />
-        </ErrorBoundary>
+        </React.ErrorBoundary>
     </React.StrictMode>
 );

@@ -27,7 +27,7 @@ class App extends React.Component {
                             <h1>Actual result:</h1>
                             <h2>Markdown Editor (React JSX)</h2>
                             <MarkdownEditor />
-                            <p>Type: {this.props.attribs.type}</p>
+                            <p>Type: {this.props.type}</p>
                         </div>
                     </div>
                 );
@@ -36,7 +36,7 @@ class App extends React.Component {
             <div>
                 <h1>Markdown Editor (React JSX)</h1>
                 <MarkdownEditor />
-                <p>Type: {this.props.attr.type}</p>
+                <p>Type: {this.props.type}</p>
             </div>
         );
     }
