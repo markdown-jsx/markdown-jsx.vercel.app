@@ -1,5 +1,3 @@
-> NOTE: This npm library is deprecated and is archived.
-
 # Markdown Editor React JSX
 To use as a component in your own Node.js-based environment:
 
